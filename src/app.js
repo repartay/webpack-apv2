@@ -1,6 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
-import './app.css';
 
 class App extends React.Component {
 	render () {
@@ -8,4 +6,4 @@ class App extends React.Component {
 	}
 }
 
-render(<App/>, document.getElementById('root'));
+export default App;
