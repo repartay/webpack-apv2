@@ -1,10 +1,3 @@
-/* module.exports = {
-	entry: './src/app.js',
-	output: {
-		filename: './dist/app.bundle.js'
-	}
-} */
-
 var webpack = require('webpack');
 var path = require('path');
 
@@ -28,6 +21,10 @@ var config = {
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader']
+			},
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				use: 'file-loader'
 			}
 		]
 	}
