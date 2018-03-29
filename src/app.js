@@ -24,7 +24,7 @@ class App extends React.Component {
 				<div style={{ maxWidth: 1000, padding: 20 }}>
 					<CardReveal
 						src={require("./img/00_travelTeam.png")}
-						title="Travel Team"
+						name="Travel Team"
 						content={content}
 					/>
 				</div>

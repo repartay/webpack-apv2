@@ -19,7 +19,7 @@ class CardReveal extends React.Component {
 		);
 	}
 	render () {
-		const {title, src} = this.props;
+		const {name, src} = this.props;
 		return (
 			<div className="card card-wrap" >
     			<div className="card-image waves-effect waves-block waves-light">
@@ -27,12 +27,12 @@ class CardReveal extends React.Component {
     			</div>
 			    <div className="card-content" >
 				    <span className="card-title activator grey-text text-darken-4">
-				      	{title}
+				      	{name}
 				    </span>
 			    </div>
 			    <div className="card-reveal">
 			      <span className="card-title grey-text text-darken-4" >
-			      	{title}
+			      	{name}
 			      </span>
 			      {this.renderContent()}
 			    </div>
