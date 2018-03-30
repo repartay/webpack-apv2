@@ -15,7 +15,7 @@ var config = {
 	},
 	output: {
 		path: BUILD_DIR,
-		filename: '[name].[chunkhash].js' 
+		filename: '[name].[hash].js' 
 	},
 	module: {
 		rules: [
@@ -41,7 +41,14 @@ var config = {
 	devServer: {
 		contentBase: BUILD_DIR, 
 		compress: true,
-		port: 9000
+		port: 9000,
+		disableHostCheck: false,
+		// useful for applications that req certain headers
+		headers: {
+			"X-Custom-header": "custom"
+		},
+		open: true,
+		hot: true
 	},
 	plugins: [
 		new htmlWebpackPlugin({
@@ -49,7 +56,8 @@ var config = {
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			names: ['vendor', 'manifest']
-		})
+		}),
+		new webpack.HotModuleReplacementPlugin()
 	]
 }
 
