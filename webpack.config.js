@@ -21,7 +21,6 @@ var config = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				// include: APP_DIR,
 				exclude: /node_modules/,
 				use: 'babel-loader'
 			},
@@ -38,6 +37,11 @@ var config = {
 				use: 'file-loader'
 			}
 		]
+	},
+	devServer: {
+		contentBase: BUILD_DIR, 
+		compress: true,
+		port: 9000
 	},
 	plugins: [
 		new htmlWebpackPlugin({

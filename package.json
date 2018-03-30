@@ -4,8 +4,9 @@
   "description": "Version 2 for Altour Portal",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run clean && webpack -d",
-    "clean": "rimraf dist"
+    "dev": "webpack-dev-server",
+    "clean": "rimraf dist",
+    "build": "webpack -d"
   },
   "author": "Margaret James",
   "license": "ISC",
@@ -35,6 +36,6 @@
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "webpack": "2.6.1",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "2.7.1"
   }
 }
