@@ -5,10 +5,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import ManageUsers from './components/ManageUsers';
 import Loading from './elements/Loading';
 
 import path from 'path';
+
+let loadableUserDetails = Loadable({
+	loader: () => import('./components/ManageUsers'),
+	loading: Loading
+})
 
 class App extends React.Component {
 	render () {
@@ -18,7 +22,7 @@ class App extends React.Component {
 					<div>
 						<Navbar />
 						<Route path="/" exact component={Home} />
-						<Route path="/users" component={ManageUsers} />
+						<Route path="/users" component={loadableUserDetails} />
 					</div>
 				</BrowserRouter>
 			</div>
