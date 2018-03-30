@@ -1,33 +1,26 @@
 // esling-disable-next-line
 import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import Home from './components/Home';
 import Navbar from './components/Navbar';
-import PromoBanner from './components/PromoBanner';
-import CardReveal from './elements/CardReveal';
+import ManageUsers from './components/ManageUsers';
+import Loading from './elements/Loading';
 
+import path from 'path';
 
 class App extends React.Component {
 	render () {
-		const content = [
-			{
-				link: "https://www.google.com",
-				title: "Link 1"
-			}, {
-				link: "https://www.facebook.com",
-				title: "Link 2"
-			}
-		];
 		return (
 			<div>
-				<Navbar />
-				<PromoBanner />
-				<div style={{ maxWidth: 1000, padding: 20 }}>
-					<CardReveal
-						src={require("./img/00_travelTeam.png")}
-						name="Travel Team"
-						content={content}
-					/>
-				</div>
+				<BrowserRouter>
+					<div>
+						<Navbar />
+						<Route path="/" exact component={Home} />
+						<Route path="/users" component={ManageUsers} />
+					</div>
+				</BrowserRouter>
 			</div>
 		);
 	}

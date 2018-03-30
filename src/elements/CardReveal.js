@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import MdClose from 'react-icons/lib/md/close';
 import './CardReveal.css';
 
@@ -35,6 +36,7 @@ class CardReveal extends React.Component {
 			      	{name}
 			      </span>
 			      {this.renderContent()}
+			      <Link to="/users" >Users List</Link>
 			    </div>
 			  </div>
 		);

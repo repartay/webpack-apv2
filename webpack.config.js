@@ -15,14 +15,19 @@ var config = {
 	},
 	output: {
 		path: BUILD_DIR,
-		filename: '[name].[hash].js' 
+		filename: '[name].[hash].js'
 	},
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: 'babel-loader'
+				loader: 'babel-loader',
+				options: {
+					babelrc: false,
+					presets: ["babel-preset-env", "react", "stage-2"],
+					plugins: ['syntax-dynamic-import']
+				}
 			},
 			{
 				test: /\.css$/,
